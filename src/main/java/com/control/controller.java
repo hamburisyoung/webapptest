@@ -12,10 +12,12 @@ package com.control;
  * Created by dzkan on 2016/3/8.
  */
 @Controller
+//@RequestMapping("/")
 public class controller {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index() {
-        return "index";
-    }
+    public String index() {return "index";}
+
+    @RequestMapping(value = "/submit", method = RequestMethod.GET)
+    public String submit() {System.out.println("submit in");return "result";}
 }
