@@ -28,9 +28,8 @@ package com.control;
  * Created by dzkan on 2016/3/8.
  */
 @Controller
-//@RequestMapping("/")
 public class controller {
-
+    public int SID=0;
     @RequestMapping(value = "/webapptest", method = RequestMethod.GET)
     @ResponseBody
     public String webapptest() {
@@ -42,7 +41,7 @@ public class controller {
         return "index";
     }
 
-    @RequestMapping(value = "/submit", method = RequestMethod.GET)
+    @RequestMapping(value = "/submit") //method = RequestMethod.GET)
     public ModelAndView submit(@RequestParam("name") String system_name,@RequestParam("url") String system_url ) throws IOException {
         System.out.println("system_name is :"+system_name);
         System.out.println("system_url is :"+system_url);
@@ -59,8 +58,7 @@ public class controller {
             /************************cmd *******************************************/
             String cmd_str = "open ./1/123";
             runtime.exec(cmd_str);
-        int message=123232;
-        return new ModelAndView("result","message", message);
+        return new ModelAndView("result","message", SID++);
     }
     @RequestMapping(value ="/check",method = RequestMethod.GET)
     public String check(){

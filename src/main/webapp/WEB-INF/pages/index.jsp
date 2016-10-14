@@ -4,7 +4,7 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-<body>
+<body text-align:center;>
 <img src="resources/logo.png" width=30%>
 <h1>A Web for Security Penetration Testing</h1>
 <h2>Please enter the url of your system: </h2>
@@ -14,7 +14,6 @@
     系统URL: <input type="text" id="system_url" name="url"/>
     <input type="submit" value="提交安全测试"/>
 </form>
-
 <script>
     function check(){
 

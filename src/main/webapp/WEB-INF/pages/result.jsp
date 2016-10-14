@@ -4,13 +4,12 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-<body>
+<body >
 <img src="resources/logo.png" width=30%>
 <h1>please wait for your paper</h1>
 <form id="form " name="form" action="/check" method="Get">
-    the number of this paper is :
-    <br/>
-    message:${message }
+    the number of this paper is:${message }
+    <br>
     input the number to check if the test is over:<input type="text" id="system_number" name="system_number">
     <input type="submit" value="查询结果">
 </form>
