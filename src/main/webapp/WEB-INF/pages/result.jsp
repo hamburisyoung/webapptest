@@ -5,9 +5,15 @@
 
 <html>
 <body>
-<img src="WEB-INF/pages/bgpicture.jpg" width=100%>
-<h1>hello</h1>
-
+<img src="resources/logo.png" width=30%>
+<h1>please wait for your paper</h1>
+<form id="form " name="form" action="/check" method="Get">
+    the number of this paper is :
+    <br/>
+    message:${message }
+    input the number to check if the test is over:<input type="text" id="system_number" name="system_number">
+    <input type="submit" value="查询结果">
+</form>
 </body>
 </html>
 <html>

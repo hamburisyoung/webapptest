@@ -5,25 +5,34 @@
 
 <html>
 <body>
-<img src="WEB-INF/pages/bgpicture.jpg" width=100%>
+<img src="resources/logo.png" width=30%>
 <h1>A Web for Security Penetration Testing</h1>
 <h2>Please enter the url of your system: </h2>
 <form id="form" name="form" action="/submit" method="GET" onsubmit="return check();">
-    aaaa系统名: <input type="text" id="aaa" name="name" >
+    系统名称: <input type="text" id="system_name" name="name" >
     <br/>
-    系统URL: <input type="text" name="url"/>
+    系统URL: <input type="text" id="system_url" name="url"/>
     <input type="submit" value="提交安全测试"/>
 </form>
 
 <script>
     function check(){
-        if(document.getElementById("aaa").value== ""){
-            alert("error");
+
+        if(document.getElementById("system_name").value== ""){
+            alert("error,the system name is empty!");
             return false;
         }
-        return true;
+        else if (document.getElementById("system_url").value==""){
+            alert("error,the url is empty!");
+            return false;
+        }else {
+            return true;
+        }
     }
 </script>
+
+<script src="resources/jquery-2.2.4/jquery-2.2.4.min.js"></script>
+
 </body>
 </html>
 <html>
