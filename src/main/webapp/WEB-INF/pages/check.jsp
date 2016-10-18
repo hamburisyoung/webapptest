@@ -7,10 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>waiting !</title>
-</head>
 <body>
-hai mei hao
+${message}
 </body>
 </html>

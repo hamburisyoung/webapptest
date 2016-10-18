@@ -7,13 +7,16 @@
 <body text-align:center;>
 <img src="resources/logo.png" width=30%>
 <h1>A Web for Security Penetration Testing</h1>
-<h2>Please enter the url of your system: </h2>
+<h2>输入系统名称和IP地址: </h2>
 <form id="form" name="form" action="/submit" method="GET" onsubmit="return check();">
-    系统名称: <input type="text" id="system_name" name="name" >
+    新建扫描任务名称：<input type="text" id="system_name" name="name" >
     <br/>
-    系统URL: <input type="text" id="system_url" name="url"/>
+    &nbsp&nbsp&nbsp&nbsp
+    系&nbsp统&nbspURL&nbsp:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" id="system_url" name="url"/>
     <input type="submit" value="提交安全测试"/>
 </form>
+<br/>
+${message}
 <script>
     function check(){
 
