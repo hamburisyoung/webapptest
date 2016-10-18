@@ -45,25 +45,33 @@ public class controller {
         if (!isIP(system_url)){
             return new ModelAndView("index","message","url格式错误");
         }
-        else {
-            //create the file-route
-            String path_route = "./webapptest_file/BOCOMM" + system_name+"("+system_url+")";
-            System.out.println("system_url is :" + path_route);
-            File path_filelog = new File(path_route);
-            if (!path_filelog.exists()) {
-                //create the file
-                path_filelog.mkdirs();
-                System.out.println("|------------->first time to log :create a new route for file success");
+        //create the file-route
+        Thread thread=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String path_route = "./webapptest_file/BOCOMM" + system_name + "(" + system_url + ")";
+                System.out.println("system_url is :" + path_route);
+                File path_filelog = new File(path_route);
+                if (!path_filelog.exists()) {
+                    //create the file
+                    path_filelog.mkdirs();
+                    System.out.println("|------------->first time to log :create a new route for file success");
 
-                /********************cmd ***************/
-                Runtime runtime = Runtime.getRuntime();
-                String cmd_str = "open ./1/123";
-                runtime.exec(cmd_str);
-                /***************************************/
+                    /********************cmd ***************/
+                    Runtime runtime = Runtime.getRuntime();
+                    String cmd_str = "open ./1/123";
+                    try {
+                        runtime.exec(cmd_str);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    /***************************************/
+                }
             }
-
+        });
+            thread.start();
             return new ModelAndView("result", "message", "BOCOMM"+system_name+"("+system_url+")");
-        }
+
     }
 
     private boolean isIP(String system_url) {
